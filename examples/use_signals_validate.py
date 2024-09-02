@@ -41,7 +41,7 @@ if __name__ == '__main__':
             sig_name = signals_config[0]['name'].split('.')[-1]
             md5 = hashlib.sha256((str(signals_config) + str(symbols)).encode('utf-8')).hexdigest()[:8].upper()
             sa = SignalAnalyzer(symbols, read_bars=get_raw_bars, signals_config=signals_config,
-                                results_path=fr"D:\号验证结果\{name}#{sig_name}#{md5}")
+                                results_path=fr"/Users/admin/.czsc/validate/{name}#{sig_name}#{md5}")
             sa.execute(max_workers=25)
         except Exception as e:
             logger.error(e)

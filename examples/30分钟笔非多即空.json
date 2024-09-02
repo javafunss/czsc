@@ -1,0 +1,45 @@
+{
+  "name": "30分钟笔非多即空",
+  "opens": [
+    {
+      "operate": "开多",
+      "signals_all": [],
+      "signals_any": [],
+      "signals_not": [],
+      "factors": [
+        {
+          "signals_all": [
+            "30分钟_D1_表里关系V230101_向上_任意_任意_0"
+          ],
+          "signals_any": [],
+          "signals_not": [
+            "30分钟_D1_涨跌停V230331_涨停_任意_任意_0"
+          ]
+        }
+      ]
+    },
+    {
+      "operate": "开空",
+      "signals_all": [],
+      "signals_any": [],
+      "signals_not": [],
+      "factors": [
+        {
+          "signals_all": [
+            "30分钟_D1_表里关系V230101_向下_任意_任意_0"
+          ],
+          "signals_any": [],
+          "signals_not": [
+            "30分钟_D1_涨跌停V230331_跌停_任意_任意_0"
+          ]
+        }
+      ]
+    }
+  ],
+  "exits": [],
+  "interval": 14400,
+  "timeout": 480,
+  "stop_loss": 500,
+  "T0": false,
+  "md5": "18fdb32bc1fdbaffc4d825f286188578"
+}

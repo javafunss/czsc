@@ -108,7 +108,7 @@ class CzscStrategyBase(ABC):
             uni_times = sorted(list({x.dt.strftime("%H:%M") for x in bars}))
             _, market = check_freq_and_market(uni_times, freq=base_freq)
 
-            sdt = pd.to_datetime(kwargs.get("sdt", "20200101"))
+            sdt = pd.to_datetime(kwargs.get("sdt", "20200101"),utc=True)
             n = int(kwargs.get("n", 500))
             bg = BarGenerator(base_freq, freqs=freqs, market=market)
 

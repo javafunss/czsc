@@ -34,7 +34,7 @@ def get_intraday_times(freq="1分钟", market="A股"):
     :param market: 市场名称，可选值：A股、期货、默认
     :return: 交易时间段列表
     """
-    assert market in ["A股", "期货", "默认"], "market 参数必须为 A股 或 期货 或 默认"
+    assert market in ["A股", "期货", "默认","外汇"], "market 参数必须为 A股 或 期货 或 默认"
     assert freq.endswith("分钟"), "freq 参数必须为分钟级别的K线周期"
     return freq_market_times[f"{freq}_{market}"]
 

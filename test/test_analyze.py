@@ -90,3 +90,6 @@ def test_czsc_update():
     file_html = "x.html"
     chart.render(file_html)
     os.remove(file_html)
+
+if __name__ == '__main__':
+    test_find_bi()

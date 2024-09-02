@@ -57,6 +57,7 @@ class DummyBacktest:
         start_time = time.time()
         tactic = self.strategy(symbol=symbol, **self.kwargs)
         symbol_path = os.path.join(self.poss_path, symbol)
+        print(symbol_path)
         if os.path.exists(symbol_path):
             logger.info(f"{symbol} 已经回测过，跳过")
             return None

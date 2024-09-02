@@ -11,9 +11,9 @@ sys.path.insert(0, '..')
 
 from czsc import CTAResearch
 from czsc.strategies import CzscStrategyExample2
-from czsc.connectors.research import get_raw_bars, get_symbols
+from czsc.connectors.mt5_connector import get_raw_bars
 
-bot = CTAResearch(results_path=r"D:\CTA投研\策略测试", signals_module_name='czsc.signals',
+bot = CTAResearch(results_path=r"/Users/admin/.czsc/results", signals_module_name='czsc.signals',
                   strategy=CzscStrategyExample2, read_bars=get_raw_bars)
 
 # 策略回放
@@ -22,4 +22,5 @@ bot = CTAResearch(results_path=r"D:\CTA投研\策略测试", signals_module_name
 
 if __name__ == '__main__':
     # 策略回测，如果是使用多进程，必须在 __main__ 中执行，且必须是在命令行中执行
-    bot.backtest(symbols=get_symbols("中证500成分股")[:10], max_workers=3, bar_sdt='20190101', edt='20220101', sdt='20200101')
+    # bot.backtest(symbols=['EURUSD'], max_workers=3, bar_sdt='20230101', edt='20231231', sdt='20230201')
+    bot.replay(symbol='EURUSD', sdt='20230101', edt='20231231', refresh=True)
