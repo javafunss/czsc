@@ -22,5 +22,5 @@ bot = CTAResearch(results_path=r"/Users/admin/.czsc/results", signals_module_nam
 
 if __name__ == '__main__':
     # 策略回测，如果是使用多进程，必须在 __main__ 中执行，且必须是在命令行中执行
-    # bot.backtest(symbols=['EURUSD'], max_workers=3, bar_sdt='20230101', edt='20231231', sdt='20230201')
+    bot.backtest(symbols=['EURUSD'], max_workers=3, bar_sdt='20230101', edt='20231231', sdt='20230201')
     bot.replay(symbol='EURUSD', sdt='20230101', edt='20231231', refresh=True)
